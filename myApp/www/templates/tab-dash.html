@@ -1,0 +1,19 @@
+<ion-view title="经典面试题">
+  <ion-content>
+            <ion-list show-delete="true" show-reorder="false" can-swipe="true">
+                <ion-item ng-repeat="question in questions" href="#/tab/question/{{question.id}}">
+                    <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+                    {{question.id}} {{question.title}}
+                    <ion-option-button class="button-info"
+                                       ng-click="edit(item)">
+                        Edit
+                    </ion-option-button>
+                    <ion-option-button class="button-positive">Share</ion-option-button>
+                    <ion-reorder-button class="ion-navicon"
+                                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                </ion-item>
+            </ion-list>
+  </ion-content>
+</ion-view>
+
